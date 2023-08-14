@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+/* <html> = the root */
+html {
+  font-size: 62.5%; /* (62.5/100) * 16px = 10px */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+  list-style: none;
+}
+
+menu,
+ol,
+ul {
+  padding-left: 0;
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+.todos input:checked + label {
+  text-decoration: line-through;
+}
+
+button,
+input[type="checkbox"] {
+  cursor: pointer;
+}
