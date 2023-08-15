@@ -7,6 +7,10 @@ html {
   font-size: 62.5%; /* (62.5/100) * 16px = 10px */
 }
 
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -26,13 +30,122 @@ ul {
 
 body {
   font-size: 1.5rem;
+  background: #f5f5f5;
+}
+
+button,
+input[type="checkbox"] {
+  cursor: pointer;
 }
 
 .todos input:checked + label {
   text-decoration: line-through;
 }
 
-button,
-input[type="checkbox"] {
+.todos_header {
+  color: rgba(175, 47, 47, 0.15);
+  text-align: center;
+  font-size: 42px;
+}
+
+.todos_wrapper {
+  max-width: 60rem;
+  margin: auto;
+}
+
+.todos {
+  position: relative;
+  /* box-shadow: 0px 5px 16px -4px rgba(0, 0, 0, 0.75); */
+}
+
+.todos_content {
+  background: white;
+  border: 1px solid black;
+}
+
+.todos_content2,
+.todos_content3 {
+  position: absolute;
+  width: 95%;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: -1rem;
+  z-index: -10;
+}
+
+.todos_content3 {
+  z-index: -20;
+  bottom: -2rem;
+  width: 90%;
+}
+
+.todos_input_wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.todos_save {
+  display: none;
+}
+
+.todos_input {
+  flex: 1;
+  height: 5rem;
+  font-size: 2rem;
+  padding: 1rem;
+  font-weight: 200;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.todos_input::placeholder {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.todo_check {
+  display: none;
+}
+
+.todo_label {
+  display: flex;
+  align-items: center;
+}
+
+.todo_label::before {
+  content: url("./assets//circle.svg");
+  margin-right: 1rem;
   cursor: pointer;
+}
+
+.todos input:checked + .todo_label::before {
+  content: url("./assets//check.svg");
+}
+
+.todo_delete {
+  color: #cc9a9a;
+  font-size: 3rem;
+  margin-inline-start: auto;
+  border: none;
+  background: transparent;
+}
+
+.todo_delete::after {
+  content: "×";
+}
+
+.todo_row {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid gray;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.todo_row:last-child {
+  border-bottom: none;
 }
